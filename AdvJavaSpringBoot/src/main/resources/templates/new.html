@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div align="center">
+		<h1>Add New Employee</h1>
+		<form th:action="@{/save}" th:object="${employee}" method="post">
+			<table>
+				<tr>
+				
+					<td><input type="hidden" th:field="*{employeeId}"></td>
+				</tr>
+				<tr>
+					<td><label class="Form-label">Employee name</label></td>
+					<td><input type="text" th:field="*{employeeName}" placeholder="Enter employee name"></td>
+				</tr>
+				<tr>
+					<td><label class="Form-label">Designation</label></td>
+					<td><input type="text" th:field="*{designation}" placeholder="Enter designation"></td>
+				</tr>
+				<tr>
+					<td><label class="Form-label">Salary</label></td>
+					<td><input type="text" th:field="*{salary}" placeholder="Enter salary"></td>
+				</tr>
+				<tr>
+					<td><label class="Form-label">Address</label></td>
+					<td><input type="text" th:field="*{address}" placeholder="Enter address"></td>
+				</tr>
+			</table><br>
+			<input type="submit" value="Add">
+		</form>
+	</div>
+</body>
+</html>
